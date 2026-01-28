@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pemesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #8B4513;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+        .menu-row span {
+            width: 70%;
+        }
+        .menu-row input {
+            width: 25%;
+        }
+        button {
+            background: #8B4513;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #654321;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Pemesanan</h2>
+
+    <label>Nama Pemesan</label>
+    <input type="text" id="nama" required>
+
+    <label>Menu & Jumlah</label>
+
+    <div class="menu-list">
+
+        <div class="menu-row">
+            <span>Gudeg</span>
+            <input type="number" min="0" value="0" data-menu="Gudeg">
+        </div>
+
+        <div class="menu-row">
+            <span>Sayur Krecek</span>
+            <input type="number" min="0" value="0" data-menu="Sayur Krecek">
+        </div>
+
+        <div class="menu-row">
+            <span>Nasi Rames</span>
+            <input type="number" min="0" value="0" data-menu="Nasi Rames">
+        </div>
+
+        <div class="menu-row">
+            <span>Telur Pindang</span>
+            <input type="number" min="0" value="0" data-menu="Telur Pindang">
+        </div>
+
+        <div class="menu-row">
+            <span>Pepes Ikan Mas</span>
+            <input type="number" min="0" value="0" data-menu="Pepes Ikan Mas">
+        </div>
+
+        <div class="menu-row">
+            <span>Pepes Tahu Jamur</span>
+            <input type="number" min="0" value="0" data-menu="Pepes Tahu Jamur">
+        </div>
+
+        <div class="menu-row">
+            <span>Pepes Ikan Kembung</span>
+            <input type="number" min="0" value="0" data-menu="Pepes Ikan Kembung">
+        </div>
+
+        <div class="menu-row">
+            <span>Garang Asem Ayam</span>
+            <input type="number" min="0" value="0" data-menu="Garang Asem Ayam">
+        </div>
+
+        <div class="menu-row">
+            <span>Tempe Tahu Bacem</span>
+            <input type="number" min="0" value="0" data-menu="Tempe Tahu Bacem">
+        </div>
+
+    </div>
+
+    <label>Catatan</label>
+    <textarea id="catatan"></textarea>
+
+    <button onclick="simpanPesanan()">Pesan</button>
+</div>
+
+<script>
+function simpanPesanan() {
+    let nama = document.getElementById("nama").value;
+    let catatan = document.getElementById("catatan").value;
+
+    let inputs = document.querySelectorAll(".menu-list input[data-menu]");
+    let menuDipilih = [];
+
+    inputs.forEach(input => {
+        let jumlah = parseInt(input.value);
+        if (jumlah > 0) {
+            menuDipilih.push({
+                nama_menu: input.dataset.menu,
+                jumlah: jumlah
+            });
+        }
+    });
+
+    if (menuDipilih.length === 0) {
+        alert("Pilih minimal 1 menu");
+        return;
+    }
+
+    let pesanan = {
+        nama: nama,
+        menu: menuDipilih, // ⬅️ INI ARRAY
+        catatan: catatan,
+        waktu: new Date().toLocaleString()
+    };
+
+    let data = JSON.parse(localStorage.getItem("pesanan")) || [];
+    data.push(pesanan);
+    localStorage.setItem("pesanan", JSON.stringify(data));
+
+    window.location.href = "list_pesanan.html";
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Pesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #8B4513;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+        }
+        th {
+            background: #8B4513;
+            color: white;
+        }
+        .hapus {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Daftar Pesanan Masuk</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Menu</th>
+                <th>Jumlah</th>
+                <th>Catatan</th>
+                <th>Waktu</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="listPesanan"></tbody>
+    </table>
+</div>
+
+<script>
+function tampilPesanan() {
+    const data = JSON.parse(localStorage.getItem("pesanan")) || [];
+    const tbody = document.getElementById("listPesanan");
+    tbody.innerHTML = "";
+
+    data.forEach((p, index) => {
+        let daftarMenu = "";
+        let daftarJumlah = "";
+
+        p.menu.forEach(m => {
+            daftarMenu += m.nama_menu + "<br>";
+            daftarJumlah += m.jumlah + "<br>";
+        });
+
+        tbody.innerHTML += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${p.nama}</td>
+            <td>${daftarMenu}</td>
+            <td>${daftarJumlah}</td>
+            <td>${p.catatan || "-"}</td>
+            <td>${p.waktu}</td>
+            <td>
+                <button class="hapus" onclick="hapusPesanan(${index})">Hapus</button>
+            </td>
+        </tr>`;
+    });
+}
+
+function hapusPesanan(index) {
+    let data = JSON.parse(localStorage.getItem("pesanan")) || [];
+    data.splice(index, 1);
+    localStorage.setItem("pesanan", JSON.stringify(data));
+    tampilPesanan();
+}
+
+tampilPesanan();
+</script>
+
+</body>
+</html>

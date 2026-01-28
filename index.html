@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Gudeg Jogja Ibu Zahwa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #8B4513; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .menu-details h3 {
+            margin: 0;
+            color: #8B4513;
+        }
+        .menu-details p {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #d9534f;
+        }
+        button {
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #654321;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #8B4513;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .ready {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 14px;
+            background-color: #28a745; /* hijau */
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+       .pesan-wrapper {
+           text-align: center;
+           margin-top: 40px;
+        }
+
+       .pesan-btn {
+           display: inline-block;
+           background-color: #8B4513;
+           color: white;
+           padding: 14px 30px;
+           font-size: 18px;
+           font-weight: bold;
+           border-radius: 30px;
+           text-decoration: none;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .pesan-btn:hover {
+          background-color: #654321;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Warung Gudeg Jogja Ibu Zahwa</h1>
+        <p>Rasakan cita rasa autentik Gudeg Jogja yang legendaris!</p>
+    </header>
+
+    <div class="container">
+        <h2>Menu Kami</h2>
+        
+        <div class="menu-item">
+            <img src="images/gudeg.jpg" alt="Gudeg">
+            <div class="menu-details">
+                <h3>Gudeg</h3>
+                <p>Nangka muda yang dimasak dengan santan dan rempah-rempah khas Jogja, disajikan dengan ayam kampung.</p>
+                <p class="price">Rp 10.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/krecek.jpg" alt="Sayur Krecek">
+            <div class="menu-details">
+                <h3>Sayur Krecek</h3>
+                <p>Sayuran campur dengan krecek (kulit sapi goreng) yang gurih, cocok sebagai pelengkap gudeg.</p>
+                <p class="price">Rp 10.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/nasi_rames.jpg" alt="Nasi Rames">
+            <div class="menu-details">
+                <h3>Nasi Rames (Gudeg, Sayur Krecek, Telur Pindang, Nasi dan Sambel)</h3>
+                <p>Paket lengkap: Nasi putih, gudeg, sayur krecek, telur pindang, dan sambel krecek yang pedas.</p>
+                <p class="price">Rp 17.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/telur_pindang.jpg" alt="Telur Pindang">
+            <div class="menu-details">
+                <h3>Telur Pindang</h3>
+                <p>Telur ayam yang direbus dengan rempah-rempah, menghasilkan rasa gurih dan aroma khas.</p>
+                <p class="price">Rp 3.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/pepes_ikan_mas.jpg" alt="Pepes Ikan Mas Duri Lunak">
+            <div class="menu-details">
+                <h3>Pepes Ikan Mas Duri Lunak</h3>
+                <p>Ikan mas yang dibungkus daun pisang dengan bumbu rempah, dikukus hingga empuk.</p>
+                <p class="price">Rp 20.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/pepes_tahu.jpg" alt="Pepes Tahu Jamur">
+            <div class="menu-details">
+                <h3>Pepes Tahu Jamur</h3>
+                <p>Tahu dan jamur yang dibungkus daun pisang dengan bumbu, cocok untuk vegetarian.</p>
+                <p class="price">Rp 5.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/pepes_ikan_kembung.jpg" alt="Pepes Ikan Kembung">
+            <div class="menu-details">
+                <h3>Pepes Ikan Kembung</h3>
+                <p>Ikan kembung segar yang dibumbui dan dikukus dalam daun pisang.</p>
+                <p class="price">Rp 15.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/garang_asem_ayam.jpg" alt="Garang Asem Ayam">
+            <div class="menu-details">
+                <h3>Garang Asem Ayam</h3>
+                <p>Ayam yang dimasak dengan kuah asam pedas, disajikan dalam daun pisang.</p>
+                <p class="price">Rp 15.000</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/tahu_tempe_bacem.jpg" alt="Tempe Tahu Bacem">
+            <div class="menu-details">
+                <h3>Tempe Tahu Bacem</h3>
+                <p>Tempe dan tahu yang dimasak dengan gula merah dan rempah, gurih dan manis.</p>
+                <p class="price">Rp 2.500</p>
+                <span class="ready">Ready Minggu</span>
+            </div>
+        </div>
+
+        <div class="pesan-wrapper">
+                <a href="order.html" class="pesan-btn">Pesan di sini</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p> Warung Gudeg Jogja Ibu Zahwa. Hubungi kami di 0812-8164-9159</p>
+    </footer>
+
+    <script>
+        // Script sederhana untuk interaktivitas (alert saat klik tombol)
+        // Kamu bisa tambahkan lebih banyak JS jika perlu, seperti form pemesanan.
+    </script>
+</body>
+</html>
